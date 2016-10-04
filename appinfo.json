@@ -1,0 +1,75 @@
+{
+  "uuid": "caa09485-0ad4-42dc-a854-05b017c7466a",
+  "shortName": "sailor-moon-watchface",
+  "longName": "sailor-moon-watchface",
+  "companyName": "Constantina Scoullis",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": [
+    "aplite",
+    "basalt",
+    "chalk"
+  ],
+  "enableMultiJS": true,
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "file": "img/mercury.png",
+        "name": "MERCURY",
+        "type": "png"
+      },
+      {
+        "file": "img/mars.png",
+        "name": "MARS",
+        "type": "png"
+      },
+      {
+        "file": "img/venus.png",
+        "name": "VENUS",
+        "type": "png"
+      },
+      {
+        "file": "img/jupiter.png",
+        "name": "JUPITER",
+        "type": "png"
+      },
+      {
+        "file": "img/uranus.png",
+        "name": "URANUS",
+        "type": "png"
+      },
+      {
+        "file": "img/neptune.png",
+        "name": "NEPTUNE",
+        "type": "png"
+      },
+      {
+        "file": "img/pluto.png",
+        "name": "PLUTO",
+        "type": "png"
+      },
+      {
+        "file": "img/saturn.png",
+        "name": "SATURN",
+        "type": "png"
+      },
+      {
+        "file": "img/moon.png",
+        "name": "MOON",
+        "type": "png"
+      },
+      {
+        "characterRegex": "[0-9]",
+        "type": "font",
+        "name": "CRAFTY_GIRLS_20",
+        "file": "font/CraftyGirls.ttf"
+      }
+    ]
+  }
+}
