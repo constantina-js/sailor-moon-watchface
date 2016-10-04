@@ -67,7 +67,7 @@
       {
         "characterRegex": "[0-9]",
         "type": "font",
-        "name": "CRAFTY_GIRLS_20",
+        "name": "CRAFTY_GIRLS_24",
         "file": "font/CraftyGirls.ttf"
       }
     ]
