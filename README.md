@@ -3,10 +3,10 @@ Getting back to making things for the Pebble after a little break. A watchface I
 
 The symbol presented on the watch changes based on day. For now
 
-Sunday - Pluto
-Monday - Moon
-Tuesday - Mars
-Wednesday - Mercury
-Thursday - Jupiter
-Friday - Venus
-Saturday - Saturn
+<br> Sunday - Pluto
+<br> Monday - Moon
+<br> Tuesday - Mars
+<br> Wednesday - Mercury
+<br> Thursday - Jupiter
+<br> Friday - Venus
+<br> Saturday - Saturn
