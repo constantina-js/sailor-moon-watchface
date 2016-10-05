@@ -60,16 +60,16 @@ static void update_sailorscout_symbol(struct tm *current_time){
 		if(dayOfTheWeek==0){	//Sunday
 			
 			
-			int r = rand() % 3;	//generates random index to pick Outer Sailor Scout for Sunday
-			
-			const char *outer_sailor_scouts[3];
-			outer_sailor_scouts[0] = "RESOURCE_ID_URANUS";
-			outer_sailor_scouts[1] = "RESOURCE_ID_NEPTUNE";
-			outer_sailor_scouts[2] = "RESOURCE_ID_PLUTO";
-			
-			symbol_bitmap = gbitmap_create_with_resource(*outer_sailor_scouts[r]);
-			
-			
+			int random_number = rand()%3;	//generates random index to pick Outer Sailor Scout for Sunday
+
+			if(random_number==0){
+				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_NEPTUNE);
+			} else if (random_number==1){
+				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_URANUS);
+			} else if (random_number==2){
+				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PLUTO);
+			}
+
 		} else if (dayOfTheWeek==1){	//Monday
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_MOON);
 		} else if (dayOfTheWeek==2){	//Tuesday
