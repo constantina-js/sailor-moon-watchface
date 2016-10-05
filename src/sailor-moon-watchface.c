@@ -3,6 +3,7 @@
 #include <pebble.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 static Window *window;				//creating the pointer to the main window
 static TextLayer *time_layer;		//pointer to text layer that will display time
@@ -10,7 +11,10 @@ static BitmapLayer *symbol_layer;	//pointer to bitmap layer for planet symbols
 static GBitmap *symbol_bitmap;		//pointer to gbitmap layer for planet symbols
 
 
-static void window_load(Window *window) { }
+static void window_load(Window *window) {
+
+	
+ }
 
 
 static void window_unload(Window *window) {
@@ -58,7 +62,18 @@ static void update_sailorscout_symbol(struct tm *current_time){
 	int dayOfTheWeek = current_time->tm_wday;
     
 		if(dayOfTheWeek==0){	//Sunday
-			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PLUTO);
+			
+			
+			int r = rand() % 3;	//generates random index to pick Outer Sailor Scout for Sunday
+			
+			const char *outer_sailor_scouts[3];
+			outer_sailor_scouts[0] = "RESOURCE_ID_URANUS";
+			outer_sailor_scouts[1] = "RESOURCE_ID_NEPTUNE";
+			outer_sailor_scouts[2] = "RESOURCE_ID_PLUTO";
+			
+			symbol_bitmap = gbitmap_create_with_resource(*outer_sailor_scouts[r]);
+			
+			
 		} else if (dayOfTheWeek==1){	//Monday
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_MOON);
 		} else if (dayOfTheWeek==2){	//Tuesday
@@ -73,7 +88,7 @@ static void update_sailorscout_symbol(struct tm *current_time){
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);		
 		}
 	
-	symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);	
+	symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);
 	
     bitmap_layer_set_bitmap(symbol_layer, symbol_bitmap);
     layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(symbol_layer));
