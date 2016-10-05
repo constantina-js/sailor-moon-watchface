@@ -11,10 +11,7 @@ static BitmapLayer *symbol_layer;	//pointer to bitmap layer for planet symbols
 static GBitmap *symbol_bitmap;		//pointer to gbitmap layer for planet symbols
 
 
-static void window_load(Window *window) {
-
-	
- }
+static void window_load(Window *window) {}
 
 
 static void window_unload(Window *window) {
