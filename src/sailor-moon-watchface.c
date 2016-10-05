@@ -38,7 +38,6 @@ static void update_time() {
 }
 
 
-
 static void update_sailorscout_symbol(struct tm *current_time){
 
 	time_layer = text_layer_create(GRect(0, 120, 144, 50));
@@ -85,7 +84,6 @@ static void update_sailorscout_symbol(struct tm *current_time){
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);		
 		}
 	
-	symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);
 	
     bitmap_layer_set_bitmap(symbol_layer, symbol_bitmap);
     layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(symbol_layer));
