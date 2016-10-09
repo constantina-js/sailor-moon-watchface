@@ -65,9 +65,9 @@
         "type": "png"
       },
       {
-        "characterRegex": "[0-9]",
+        "characterRegex": "[0-9:APM ]",
         "type": "font",
-        "name": "CRAFTY_GIRLS_24",
+        "name": "CRAFTY_GIRLS_30",
         "file": "font/CraftyGirls.ttf"
       }
     ]

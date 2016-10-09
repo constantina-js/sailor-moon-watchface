@@ -40,18 +40,21 @@ static void update_time() {
 
 static void update_sailorscout_symbol(struct tm *current_time){
 
-	time_layer = text_layer_create(GRect(0, 120, 144, 50));
+	Layer *window_layer = window_get_root_layer(window);
+	GRect bounds = layer_get_bounds(window_layer);
+
+	time_layer = text_layer_create(GRect(0, 120, bounds.size.w, 50));
     text_layer_set_background_color(time_layer, GColorBlack);
     text_layer_set_text_color(time_layer, GColorWhite);
     text_layer_set_text(time_layer, "00:00");
     
-    GFont custom_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_CRAFTY_GIRLS_24));
+    GFont custom_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_CRAFTY_GIRLS_30));
     text_layer_set_font(time_layer, custom_font);
     text_layer_set_text_alignment(time_layer, GTextAlignmentCenter);
     layer_add_child(window_get_root_layer(window), text_layer_get_layer(time_layer));
     
     
-    symbol_layer = bitmap_layer_create(GRect(0, 25, 144, 90));
+    symbol_layer = bitmap_layer_create(GRect(0, 25, bounds.size.w, 90));
     bitmap_layer_set_background_color(symbol_layer, GColorBlack);
 
 
@@ -59,15 +62,14 @@ static void update_sailorscout_symbol(struct tm *current_time){
     
 		if(dayOfTheWeek==0){	//Sunday
 			
-			
 			int random_number = rand()%3;	//generates random index to pick Outer Sailor Scout for Sunday
 
 			if(random_number==0){
-				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_NEPTUNE);
+				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PLUTO);
 			} else if (random_number==1){
 				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_URANUS);
 			} else if (random_number==2){
-				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PLUTO);
+				symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_NEPTUNE);
 			}
 
 		} else if (dayOfTheWeek==1){	//Monday
@@ -82,7 +84,7 @@ static void update_sailorscout_symbol(struct tm *current_time){
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_VENUS);
 		}else if (dayOfTheWeek==6){		//Saturday
 			symbol_bitmap = gbitmap_create_with_resource(RESOURCE_ID_SATURN);		
-		}
+		}*/
 	
 	
     bitmap_layer_set_bitmap(symbol_layer, symbol_bitmap);
